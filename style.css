@@ -326,7 +326,7 @@ main > section{ position:relative; z-index:2; }
     radial-gradient(circle at 30% 20%, rgba(111,227,214,0.08), transparent 55%),
     var(--surface-2);
 }
-.project__preview--vibeo, .project__preview--cinema {
+.project__preview--vibeo, .project__preview--cinema, .project__preview--freshcart {
   padding: 0;
   display: block;
   overflow: hidden;
@@ -386,6 +386,29 @@ main > section{ position:relative; z-index:2; }
   z-index: 1;
   position: relative;
 }
+
+/* ---------- Freshcart: auto-advancing slideshow ---------- */
+.project__screenshots--freshcart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.project__screenshots--freshcart img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  animation: vibeoSlide 12s ease-in-out infinite;
+  border-radius: 0;
+  transition: none;
+}
+.project__screenshots--freshcart img:nth-child(1) { animation-delay: 0s; }
+.project__screenshots--freshcart img:nth-child(2) { animation-delay: 3s; }
+.project__screenshots--freshcart img:nth-child(3) { animation-delay: 6s; }
+.project__screenshots--freshcart img:nth-child(4) { animation-delay: 9s; }
 
 /* ---------- Agri: mock graph (unchanged) ---------- */
 .project__preview--agri{ align-items:end; }
